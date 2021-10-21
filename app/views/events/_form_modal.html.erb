@@ -1,0 +1,39 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  日記を書く
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">日記を書く</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <%= form_with(model: @event, local: true) do |form| %>
+        <div class="modal-body">
+          <div class="title">
+            <%= form.label :title, "タイトル" %>
+            <%= form.text_field :title %>
+          </div>
+
+            <div class="time">
+            <%= form.label :start_time, "開始時間" %>
+            <%= form.datetime_select :start_time %>
+          </div>
+
+          <div class="content">
+            <%= form.label :content, "内容" %>
+            <%= form.text_field :content %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="submit">
+            <%= form.submit "Save changes", class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
