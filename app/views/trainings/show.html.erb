@@ -2,12 +2,12 @@
 
 <p>
   <strong>タイトル</strong>
-  <%= @training.type %>
+  <%= @training.training_type %>
 </p>
 
 <p>
   <strong>時間</strong>
-  <%= @training.datetime.strftime("%Y-%m-%d %H:%M") %>
+  <%= @training.start_time.strftime("%Y-%m-%d %H:%M") %>
 </p>
 
 <p>

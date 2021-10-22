@@ -14,8 +14,8 @@
   <tbody>
     <% @trainings.each do |training| %>
       <tr>
-        <td><%= training.type %></td>
-        <td><%= training.datetime.strftime("%Y-%m-%d %H:%M") %></td>
+        <td><%= training.training_type %></td>
+        <td><%= training.start_time.strftime("%Y-%m-%d %H:%M") %></td>
         <td><%= link_to 'Show', training %></td>
         <td><%= link_to 'Edit', edit_training_path(training.id) %></td>
         <td><%= link_to 'Destroy',training_path(training.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -28,12 +28,12 @@
 
 <%= render 'form_modal' %>
 
-<%= month_calendar trainings: @trainings do |date, trainings| %>
+<%= month_calendar events: @trainings do |date, trainings| %>
   <%= date.day %>
 
   <% trainings.each do |training| %>
     <div>
-      <%= link_to training.type, training %>
+      <%= link_to training.training_type, training %>
     </div>
   <% end %>
 <% end %>

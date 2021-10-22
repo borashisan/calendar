@@ -13,18 +13,33 @@
       </div>
       <%= form_with(model: @training, local: true) do |form| %>
         <div class="modal-body">
-          <div class="type">
-            <%= form.label :type, "タイトル" %>
-            <%= form.text_field :type %>
+          <div class="training_type">
+            <%= form.label :training_type, "筋トレ種目" %>
+            <%= form.text_field :training_type %>
           </div>
 
-            <div class="time">
-            <%= form.label :datetime, "開始時間" %>
-            <%= form.datetime_select :datetime %>
+          <div class="weight">
+            <%= form.label :weight, "重量" %>
+            <%= form.text_field :weight %>
+          </div>
+
+          <div class="rep">
+            <%= form.label :rep, "1セット回数" %>
+            <%= form.text_field :rep %>
+          </div>
+
+          <div class="set">
+            <%= form.label :set, "セット数" %>
+            <%= form.text_field :set %>
+          </div>
+
+          <div class="time">
+            <%= form.label :start_time, "日時" %>
+            <%= form.datetime_select :start_time %>
           </div>
 
           <div class="comment">
-            <%= form.label :comment, "内容" %>
+            <%= form.label :comment, "コメント" %>
             <%= form.text_field :comment %>
           </div>
         </div>
