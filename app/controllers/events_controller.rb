@@ -33,6 +33,6 @@ class TrainingsController < ApplicationController
   end
 
   def training_parameter
-    params.require(:training).permit(:title, :content, :start_time)
+    params.require(:training).permit(:type, :weight, :rep, :set, :datetime)
   end
 end

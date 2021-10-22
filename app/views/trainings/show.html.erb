@@ -2,17 +2,17 @@
 
 <p>
   <strong>タイトル</strong>
-  <%= @training.title %>
+  <%= @training.type %>
 </p>
 
 <p>
   <strong>時間</strong>
-  <%= @training.start_time.strftime("%Y-%m-%d %H:%M") %>
+  <%= @training.datetime.strftime("%Y-%m-%d %H:%M") %>
 </p>
 
 <p>
   <strong>内容</strong>
-  <%= @training.content %>
+  <%= @training.comment %>
 </p>
 
 <%= link_to 'Edit', edit_training_path(@training) %> |

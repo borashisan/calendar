@@ -13,19 +13,19 @@
       </div>
       <%= form_with(model: @training, local: true) do |form| %>
         <div class="modal-body">
-          <div class="title">
-            <%= form.label :title, "タイトル" %>
-            <%= form.text_field :title %>
+          <div class="type">
+            <%= form.label :type, "タイトル" %>
+            <%= form.text_field :type %>
           </div>
 
             <div class="time">
-            <%= form.label :start_time, "開始時間" %>
-            <%= form.datetime_select :start_time %>
+            <%= form.label :datetime, "開始時間" %>
+            <%= form.datetime_select :datetime %>
           </div>
 
-          <div class="content">
-            <%= form.label :content, "内容" %>
-            <%= form.text_field :content %>
+          <div class="comment">
+            <%= form.label :comment, "内容" %>
+            <%= form.text_field :comment %>
           </div>
         </div>
         <div class="modal-footer">
