@@ -33,7 +33,8 @@
 
   <% trainings.each do |training| %>
     <div>
-      <%= link_to training.training_type, training %>
+      <%= render 'detail_modal', training: training %>
+      <br>volume:<%= training.weight * training.rep * training.set %>kg
     </div>
   <% end %>
 <% end %>

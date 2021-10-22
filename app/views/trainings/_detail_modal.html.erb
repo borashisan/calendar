@@ -1,17 +1,17 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
-  記録を書く
+<button type="button" class="btn btn-link btn-sm" data-bs-toggle="modal" data-bs-target="#detail<%= training.id %>Modal">
+  <%= training.training_type %>
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+<div class="modal fade" id="detail<%= training.id %>Modal" tabindex="-1" aria-labelledby="detail<%= training.id %>ModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="formModalLabel">記録する</h5>
+        <h5 class="modal-title" id="detail<%= training.id %>ModalLabel">記録</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <%= form_with(model: @training, local: true) do |form| %>
+      <%= form_with(model: training, local: true) do |form| %>
         <div class="modal-body">
           <div class="training_type">
             <%= form.label :training_type, "筋トレ種目" %>
@@ -45,7 +45,7 @@
         </div>
         <div class="modal-footer">
           <div class="submit">
-            <%= form.submit "保存", class: "btn btn-primary" %>
+            <%= form.submit "変更する", class: "btn btn-primary" %>
           </div>
         </div>
       <% end %>
