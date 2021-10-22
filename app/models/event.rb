@@ -1,2 +1,2 @@
-class Event < ApplicationRecord
+class Training < ApplicationRecord
 end

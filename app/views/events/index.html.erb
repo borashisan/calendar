@@ -12,13 +12,13 @@
   </thead>
 
   <tbody>
-    <% @events.each do |event| %>
+    <% @trainings.each do |training| %>
       <tr>
-        <td><%= event.title %></td>
-        <td><%= event.start_time.strftime("%Y-%m-%d %H:%M") %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event.id) %></td>
-        <td><%= link_to 'Destroy',event_path(event.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= training.title %></td>
+        <td><%= training.start_time.strftime("%Y-%m-%d %H:%M") %></td>
+        <td><%= link_to 'Show', training %></td>
+        <td><%= link_to 'Edit', edit_training_path(training.id) %></td>
+        <td><%= link_to 'Destroy',training_path(training.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,12 +28,12 @@
 
 <%= render 'form_modal' %>
 
-<%= month_calendar events: @events do |date, events| %>
+<%= month_calendar trainings: @trainings do |date, trainings| %>
   <%= date.day %>
 
-  <% events.each do |event| %>
+  <% trainings.each do |training| %>
     <div>
-      <%= link_to event.title, event %>
+      <%= link_to training.title, training %>
     </div>
   <% end %>
 <% end %>

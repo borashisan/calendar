@@ -1,38 +1,38 @@
-class EventsController < ApplicationController
+class TrainingsController < ApplicationController
   def index
-    @events = Event.all
-    @event = Event.new
+    @trainings = Training.all
+    @training = Training.new
   end
 
   def show
-    @event = Event.find(params[:id])
+    @training = Training.find(params[:id])
   end
 
   def create
-    Event.create(event_parameter)
-    redirect_to events_path
+    Training.create(training_parameter)
+    redirect_to trainings_path
   end
 
   def destroy
-    @event = Event.find(params[:id])
-    @event.destroy
-    redirect_to events_path, notice: "削除しました"
+    @training = Training.find(params[:id])
+    @training.destroy
+    redirect_to trainings_path, notice: "削除しました"
   end
 
   def edit
-    @event = Event.find(params[:id])
+    @training = Training.find(params[:id])
   end
 
   def update
-    @event = Event.find(params[:id])
-    if @event.update(event_parameter)
-      redirect_to events_path, notice: "編集しました"
+    @training = Training.find(params[:id])
+    if @training.update(training_parameter)
+      redirect_to trainings_path, notice: "編集しました"
     else
       render 'edit'
     end
   end
 
-  def event_parameter
-    params.require(:event).permit(:title, :content, :start_time)
+  def training_parameter
+    params.require(:training).permit(:title, :content, :start_time)
   end
 end
