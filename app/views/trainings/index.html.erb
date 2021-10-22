@@ -34,7 +34,7 @@
   <% trainings.each do |training| %>
     <div>
       <%= render 'detail_modal', training: training %>
-      <br>volume:<%= training.weight * training.rep * training.set %>kg
+      <br>Volumes:<%= training.weight * training.rep * training.set %>kg
     </div>
   <% end %>
 <% end %>
