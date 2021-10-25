@@ -12,38 +12,38 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <%= form_with(model: @training, local: true) do |form| %>
-      
-        <div class="modal-body">
-          <div class="training_type">
+
+        <ul class="modal-body">
+          <li class="training_type">
             <%= form.label :training_type, "筋トレ種目" %>
             <%= form.text_field :training_type %>
-          </div>
+          </li>
 
-          <div class="weight">
+          <li class="weight">
             <%= form.label :weight, "重量" %>
             <%= form.text_field :weight %>
-          </div>
+          </li>
 
-          <div class="rep">
+          <li class="rep">
             <%= form.label :rep, "1セット回数" %>
             <%= form.text_field :rep %>
-          </div>
+          </li>
 
-          <div class="set">
+          <li class="set">
             <%= form.label :set, "セット数" %>
             <%= form.text_field :set %>
-          </div>
+          </li>
 
-          <div class="time">
+          <li class="time">
             <%= form.label :start_time, "日時" %>
             <%= form.datetime_select :start_time %>
-          </div>
+          </li>
 
-          <div class="comment">
+          <li class="comment">
             <%= form.label :comment, "コメント" %>
             <%= form.text_field :comment %>
-          </div>
-        </div>
+          </li>
+        </ul>
         <div class="modal-footer">
           <div class="submit">
             <%= form.submit "保存", class: "btn btn-warning" %>

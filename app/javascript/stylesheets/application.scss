@@ -65,3 +65,13 @@ a {
     background: #ffc107
   }
  }
+
+ ul li {
+   list-style: none;
+   margin-bottom: 10px;
+   label {
+     margin-right: 10px;
+     width: 100px;
+     float: left;
+   }
+ }
