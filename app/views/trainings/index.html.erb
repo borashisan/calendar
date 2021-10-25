@@ -1,28 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>カレンダー</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>タイトル</th>
-      <th>時間</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @trainings.each do |training| %>
-      <tr>
-        <td><%= training.training_type %></td>
-        <td><%= training.start_time.strftime("%Y-%m-%d %H:%M") %></td>
-        <td><%= link_to 'Show', training %></td>
-        <td><%= link_to 'Edit', edit_training_path(training.id) %></td>
-        <td><%= link_to 'Destroy',training_path(training.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<h1>筋トレボリュームカレンダー</h1>
 
 <br>
 
@@ -33,7 +11,7 @@
 
   <% trainings.each do |training| %>
     <div>
-      <%= render 'detail_modal', training: training %>
+      <%= render 'detail_modal', training: training %><%= link_to '削除',training_path(training.id), method: :delete, data: { confirm: '削除してよろしいですか?' } %>
       <br>Volumes:<%= training.weight * training.rep * training.set %>kg
     </div>
   <% end %>
