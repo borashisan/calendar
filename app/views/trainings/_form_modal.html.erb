@@ -12,6 +12,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <%= form_with(model: @training, local: true) do |form| %>
+      
         <div class="modal-body">
           <div class="training_type">
             <%= form.label :training_type, "筋トレ種目" %>
