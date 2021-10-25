@@ -1,24 +1,10 @@
-# README
+# 筋トレボリュームカレンダー
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+筋トレにおいて筋肥大のためには何キロ持ち上げたかだけではなく何キロを何回何セット持ち上げたかが大事と言われています。
+それらを記録するために重量×回数×セット数をボリュームという単位で計算します。
+しかしトレーニングメニューを記録している人でもそれらをいちいち計算している人は少ないため、いまいちボリュームはイメージしづらいという人が多いです。
+なので数値を入力して記録するだけでカレンダーにボリュームが表示されるカレンダーアプリを作成しました。
 
-Things you may want to cover:
+##使用方法
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+環境によらず実行していただくためにDockerを利用を推奨します。
