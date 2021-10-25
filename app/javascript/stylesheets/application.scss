@@ -4,16 +4,34 @@ body {
   font-family: "ヒラギノ角ゴシック", "メイリオ";
 }
 
+header {
+  background-color: black;
+  height: 150px;
+}
+
 h1 {
   text-align: center;
-  margin-top: 50px;
+  padding:50px 0;
+  color: #ffc107;
 }
 
 a {
   text-decoration: none;
+  color: black;
+}
+
+.volume-popover{
+  text-align: right;
+  margin: 40px;
+}
+
+.record_button{
+  margin-top: 30px;
+  margin-left: 86px;
 }
 
 .calendar-heading {
+  font-size: 40px;
   text-align: center;
   margin-bottom: 10px;
 }
@@ -23,3 +41,37 @@ a {
   width:80%;
 }
 
+.btn-outline-dark {
+  margin-top: 10px;
+}
+
+.simple-calendar {
+  .day {}
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+  .today {}
+  .past {}
+  .future {}
+  .start-date {}
+  .prev-month {}
+  .next-month { }
+  .current-month {}
+  .has-events {
+    background: #ffc107
+  }
+ }
+
+ ul li {
+   list-style: none;
+   margin-bottom: 10px;
+   label {
+     margin-right: 10px;
+     width: 100px;
+     float: left;
+   }
+ }
