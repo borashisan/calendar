@@ -15,6 +15,7 @@ WORKDIR /calendar
 COPY Gemfile /calendar/Gemfile
 COPY Gemfile.lock /calendar/Gemfile.lock
 RUN bundle install
+RUN rails webpacker:install
 COPY . /calendar
 
 COPY entrypoint.sh /usr/bin/
