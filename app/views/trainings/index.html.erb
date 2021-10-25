@@ -1,18 +1,27 @@
-<p id="notice"><%= notice %></p>
+<header>
+  <h1>筋トレボリュームカレンダー</h1>
+</header>
 
-<h1>筋トレボリュームカレンダー</h1>
+<div class="volume-popover">
+  <button type="button" class="btn btn-lg btn-sm btn-outline-warning" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="left" title="ボリュームとは" 
+  data-bs-content="ボリュームは重量×回数×セット数で計算されます。どれだけの重量を持ち上げたかではなくどれだけのボリュームを持ち上げたかが筋肥大に有効とされています。">ボリュームとは</button>
+</div>
 
-<br>
 
-<%= render 'form_modal' %>
+
+<div class= "record_button">
+  <%= render 'form_modal' %>
+</div>
 
 <%= month_calendar events: @trainings do |date, trainings| %>
   <%= date.day %>
 
   <% trainings.each do |training| %>
     <div>
-      <%= render 'detail_modal', training: training %><%= link_to '削除',training_path(training.id), method: :delete, data: { confirm: '削除してよろしいですか?' } %>
-      <br>Volumes:<%= training.weight * training.rep * training.set %>kg
+      <%= render 'detail_modal', training: training %>
+      <% unless training.weight.nil? && training.rep.nil? && training.set.nil? %>
+        <strong>Volumes</strong>:<%= training.weight * training.rep * training.set %>kg
+      <% end %>
     </div>
   <% end %>
 <% end %>

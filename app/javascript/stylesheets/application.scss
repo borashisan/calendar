@@ -4,13 +4,29 @@ body {
   font-family: "ヒラギノ角ゴシック", "メイリオ";
 }
 
+header {
+  background-color: black;
+  height: 150px;
+}
+
 h1 {
   text-align: center;
-  margin-top: 50px;
+  padding:50px 0;
+  color: #ffc107;
 }
 
 a {
   text-decoration: none;
+}
+
+.volume-popover{
+  text-align: right;
+  margin: 40px;
+}
+
+.record_button{
+  margin-top: 30px;
+  margin-left: 86px;
 }
 
 .calendar-heading {
@@ -21,5 +37,9 @@ a {
 .simple-calendar {
   margin: 0 auto;
   width:80%;
+}
+
+.btn-outline-dark {
+  margin-top: 10px;
 }
 
