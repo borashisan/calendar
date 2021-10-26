@@ -18,7 +18,9 @@
 
   <% trainings.each do |training| %>
     <div>
-      <%= render 'detail_modal', training: training %>
+      <div class="training_type">
+        <%= render 'detail_modal', training: training %>
+      </div>
       <% unless training.weight.nil? || training.rep.nil? || training.set.nil? %>
         <strong>Volumes</strong>:<%= training.weight * training.rep * training.set %>kg
       <% else %>
