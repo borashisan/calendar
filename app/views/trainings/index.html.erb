@@ -3,7 +3,7 @@
 </header>
 
 <div class="volume-popover">
-  <button type="button" class="btn btn-lg btn-sm btn-outline-warning" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="left" title="ボリュームとは" 
+  <button type="button" class="btn btn-sm btn-outline-warning" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="left" title="ボリュームとは" 
   data-bs-content="ボリュームは重量×回数×セット数で計算されます。どれだけの重量を持ち上げたかではなくどれだけのボリュームを持ち上げたかが筋肥大に有効とされています。">ボリュームとは</button>
 </div>
 
@@ -18,9 +18,14 @@
 
   <% trainings.each do |training| %>
     <div>
-      <%= render 'detail_modal', training: training %>
-      <% unless training.weight.nil? && training.rep.nil? && training.set.nil? %>
+      <div class="training_type">
+        <%= render 'detail_modal', training: training %>
+      </div>
+      <% unless training.weight.nil? || training.rep.nil? || training.set.nil? %>
         <strong>Volumes</strong>:<%= training.weight * training.rep * training.set %>kg
+      <% else %>
+        <strong>Volumes</strong>: <button type="button" class="btn btn-sm btn-outline-dark" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="left" title="ボリューム" 
+  data-bs-content="重量と回数とレップ数を入力するとボリュームが表示されます">？</button>
       <% end %>
     </div>
   <% end %>
