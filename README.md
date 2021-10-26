@@ -9,12 +9,22 @@
 
  \#環境によらず実行していただくためにDocker desktopがインストールされている前提で説明させていただきます。
  
-起動に際しましてコンテナ内にwebpackerをインストールしてください。
+起動に必要になりますのでコンテナ内にwebpackerをインストールしてください。
  ```terminal
 $docker-compose run web rails webpacker:install
 ```
 
-あとはdocker-compose upを実行した後にlocalhost:3000からアクセスしてください。
+続きましてデータベースの作成とマイグレートを実行してください。
+
+ ```terminal
+$docker-compose run web rails db:create
+```
+
+ ```terminal
+$docker-compose run web rails db:migrate
+```
+
+docker-compose upを実行した後にlocalhost:3000からアクセスできます。
 
  ```terminal
 $docker-compose up -d
