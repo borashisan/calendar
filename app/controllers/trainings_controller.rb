@@ -4,10 +4,6 @@ class TrainingsController < ApplicationController
     @training = Training.new
   end
 
-  def show
-    @training = Training.find(params[:id])
-  end
-
   def create
     Training.create(training_parameter)
     redirect_to trainings_path
@@ -19,16 +15,10 @@ class TrainingsController < ApplicationController
     redirect_to trainings_path, notice: "削除しました"
   end
 
-  def edit
-    @training = Training.find(params[:id])
-  end
-
   def update
     @training = Training.find(params[:id])
     if @training.update(training_parameter)
       redirect_to trainings_path, notice: "編集しました"
-    else
-      render 'edit'
     end
   end
 
